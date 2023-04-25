@@ -1,0 +1,27 @@
+{% import "_includes/forms" as forms %}
+
+<div style="display: flex; align-items: center; gap: 20px;">
+	<div>
+		<label for="{{ name }}-top" style="font-weight: bold; margin-bottom: 4px; display: block;">Top</label>
+		<div>
+			{{ forms.selectField({
+				id: "#{ name }-top",
+				name: "#{ name }[topValue]",
+				options: options,
+				value: value ? value.topValue : '',
+			}) }}
+		</div>
+	</div>
+
+	<div>
+		<label for="{{ name }}-bottom" style="font-weight: bold; margin-bottom: 4px; display: block;">Bottom</label>
+		<div>
+			{{ forms.selectField({
+				id: "#{ name }-bottom",
+				name: "#{ name }[bottomValue]",
+				options: options,
+				value: value ? value.bottomValue : '',
+			}) }}
+		</div>
+	</div>
+</div>
