@@ -60,7 +60,9 @@ class Field extends craft\base\Field
     protected function inputHtml($value, ?ElementInterface $element = null): string
     {
         $options = Spacing::options()
-            ->mapWithKeys(fn ($group, $key) => [strtolower($key) => $key])
+            ->mapWithKeys(function ($group, $key) {
+                return [ strtolower($key) => $key ];
+            })
             ->toArray();
 
         return Craft::$app->getView()->renderTemplate('spacing/field', [
