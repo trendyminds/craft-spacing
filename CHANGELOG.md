@@ -1,6 +1,6 @@
 # Release Notes for Spacing
 
-## 0.7.2 - 2023-04-26
+## 0.7.3 - 2023-04-26
 - Additional PHP <= 7.3 fallbacks
 
 ## 0.7.2 - 2023-04-26
