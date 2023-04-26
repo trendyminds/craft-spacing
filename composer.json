@@ -2,7 +2,7 @@
     "name": "trendyminds/craft-spacing",
     "description": "A utility field to insert spacing between your Matrix blocks",
     "type": "craft-plugin",
-    "version": "0.7.2",
+    "version": "0.7.3",
     "license": "mit",
     "support": {
         "email": "dev@trendyminds.com",

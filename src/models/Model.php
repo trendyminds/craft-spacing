@@ -11,12 +11,12 @@ class Model extends craft\base\Model
     /**
      * The key of the selected top option
      */
-    public ?string $topValue = '';
+    public $topValue = '';
 
     /**
      * The key of the selected bottom
      */
-    public ?string $bottomValue = '';
+    public $bottomValue = '';
 
     /**
      * Outputs the value for the "Top" selection from the key/value pair in spacing.json
