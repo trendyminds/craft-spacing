@@ -7,9 +7,11 @@ use craft\base\Plugin;
 use craft\events\RegisterComponentTypesEvent;
 use craft\helpers\Json;
 use craft\services\Fields;
+use craft\web\twig\variables\CraftVariable;
 use Exception;
 use Illuminate\Support\Collection;
 use trendyminds\spacing\fields\Field;
+use trendyminds\spacing\variables\Variable;
 use yii\base\Event;
 
 /**
@@ -44,6 +46,16 @@ class Spacing extends Plugin
             Fields::EVENT_REGISTER_FIELD_TYPES,
             function (RegisterComponentTypesEvent $event) {
                 $event->types[] = Field::class;
+            }
+        );
+
+        Event::on(
+            CraftVariable::class,
+            CraftVariable::EVENT_INIT,
+            function (Event $event) {
+                /** @var CraftVariable $variable */
+                $variable = $event->sender;
+                $variable->set('spacing', Variable::class);
             }
         );
     }
