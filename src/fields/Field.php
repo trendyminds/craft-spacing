@@ -29,12 +29,12 @@ class Field extends craft\base\Field
         return 'Configure your spacing options in a <code>config/spacing.json</code> file.';
     }
 
-    public function getContentColumnType(): array|string
+    public function getContentColumnType()
     {
         return Schema::TYPE_STRING;
     }
 
-    public function normalizeValue(mixed $value, ElementInterface $element = null): mixed
+    public function normalizeValue($value, ?ElementInterface $element = null)
     {
         // Use the first value from the config as the default
         if ($value === null) {
@@ -57,7 +57,7 @@ class Field extends craft\base\Field
         return new Model($value);
     }
 
-    protected function inputHtml(mixed $value, ElementInterface $element = null): string
+    protected function inputHtml($value, ?ElementInterface $element = null): string
     {
         $options = Spacing::options()
             ->mapWithKeys(fn ($group, $key) => [strtolower($key) => $key])

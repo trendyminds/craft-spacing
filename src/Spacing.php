@@ -23,16 +23,12 @@ use yii\base\Event;
  */
 class Spacing extends Plugin
 {
-    public string $schemaVersion = '1.0.0';
+    public $schemaVersion = '0.7.0';
 
     public function init()
     {
         parent::init();
-
-        // Defer most setup tasks until Craft is fully initialized
-        Craft::$app->onInit(function () {
-            $this->attachEventHandlers();
-        });
+        $this->attachEventHandlers();
     }
 
     private function attachEventHandlers(): void
