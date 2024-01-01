@@ -4,6 +4,7 @@ namespace trendyminds\spacing\fields;
 
 use Craft;
 use craft\base\ElementInterface;
+use craft\base\InlineEditableFieldInterface;
 use craft\helpers\Json;
 use trendyminds\spacing\models\Model;
 use trendyminds\spacing\Spacing;
@@ -12,7 +13,7 @@ use yii\db\Schema;
 /**
  * Spacing field type
  */
-class Field extends craft\base\Field
+class Field extends \craft\base\Field implements InlineEditableFieldInterface
 {
     public static function displayName(): string
     {
@@ -26,7 +27,7 @@ class Field extends craft\base\Field
 
     public function getSettingsHtml(): ?string
     {
-        return 'Configure your spacing options in a <code>config/spacing.json</code> file.';
+        return '<div>Configure your spacing options in a <code>config/spacing.json</code> file.</div>';
     }
 
     public function getContentColumnType(): array|string
@@ -57,7 +58,7 @@ class Field extends craft\base\Field
         return new Model($value);
     }
 
-    protected function inputHtml(mixed $value, ElementInterface $element = null): string
+    protected function inputHtml(mixed $value, ?ElementInterface $element, bool $inline): string
     {
         $options = Spacing::options()
             ->mapWithKeys(fn ($group, $key) => [strtolower($key) => $key])

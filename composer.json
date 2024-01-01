@@ -2,7 +2,7 @@
     "name": "trendyminds/craft-spacing",
     "description": "A utility field to insert spacing between your Matrix blocks",
     "type": "craft-plugin",
-    "version": "1.0.1",
+    "version": "2.0.0",
     "license": "mit",
     "support": {
         "email": "dev@trendyminds.com",
@@ -12,8 +12,8 @@
         "rss": "https://github.com/trendyminds/craft-spacing/releases.atom"
     },
     "require": {
-        "php": ">=8.0.2",
-        "craftcms/cms": "^4.3.5"
+        "php": "^8.2",
+        "craftcms/cms": "^5.0.0-alpha.3"
     },
     "autoload": {
         "psr-4": {
@@ -30,7 +30,7 @@
     "config": {
         "sort-packages": true,
         "platform": {
-            "php": "8.0.2"
+            "php": "8.2"
         },
         "allow-plugins": {
             "yiisoft/yii2-composer": true,
